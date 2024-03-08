@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Leftside from "./Leftside";
-import Main from "./Main";
-import Rightside from "./Rightside";
+import Leftside from "./Leftside.jsx";
+import Main from "./Main.jsx";
+import Rightside from "./Rightside.jsx";
 
 const Home = (props) => {
   return (
