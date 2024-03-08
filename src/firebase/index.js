@@ -1,7 +1,8 @@
-import {initializeApp} from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import {getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
+import "firebase/storage";
+// import firebaseConfig from "./config";
 
 // Environmental variables
 const { VITE_API_KEY,
@@ -24,13 +25,11 @@ const firebaseConfig = {
     measurementId: VITE_MSMT_ID
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+const storage = firebase.storage();
 
-const db = getFirestore(firebaseApp);
-const auth = getAuth(firebaseApp);
-const provider = new GoogleAuthProvider();
-const storage = getStorage(firebaseApp);
-
-export {auth, provider, storage };
+export { auth, provider, storage };
 export default db;
- // export  default  app;
